@@ -1,5 +1,5 @@
-const { Telegraf } = require('telegraf');
-const { BOT_TOKEN, WEBAPP_URL } = require('./config');
+import { Telegraf } from 'telegraf';
+import { BOT_TOKEN, WEBAPP_URL } from './config';
 
 if (!BOT_TOKEN) {
   throw new Error('BOT_TOKEN must be provided!');

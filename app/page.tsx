@@ -21,7 +21,7 @@ function TaskBoard() {
   useEffect(() => {
     const initializeComponent = async () => {
       try {
-        if (launchParams?.startParam) {
+        if (launchParams?.startParam && typeof launchParams.startParam === 'string') {
           const encodedGroupId = launchParams.startParam;
           try {
             const decodedGroupId = atob(encodedGroupId);
@@ -32,7 +32,7 @@ function TaskBoard() {
             setError("Invalid group ID format");
           }
         } else {
-          console.log("No start_param available");
+          console.log("No start_param available or invalid type");
           setError("No group ID provided");
         }
       } catch (error) {
