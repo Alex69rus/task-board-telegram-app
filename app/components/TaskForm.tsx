@@ -12,6 +12,8 @@ export default function TaskForm({ groupId }: TaskFormProps) {
   const [title, setTitle] = useState('');
   const [error, setError] = useState<string | null>(null);
 
+  console.error("An error occurred:", error);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!title.trim() || !db) return;
