@@ -1,7 +1,9 @@
-import dotenv from 'dotenv';
-import path from 'path';
+const dotenv = require('dotenv');
+const path = require('path');
 
 dotenv.config({ path: path.resolve(__dirname, '../.env.local') });
 
-export const BOT_TOKEN = process.env.BOT_TOKEN;
-export const WEBAPP_URL = process.env.WEBAPP_URL;
+module.exports = {
+  BOT_TOKEN: process.env.BOT_TOKEN,
+  WEBAPP_URL: process.env.WEBAPP_URL
+};

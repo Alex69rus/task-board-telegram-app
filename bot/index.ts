@@ -1,5 +1,5 @@
-import { Telegraf } from 'telegraf';
-import { BOT_TOKEN, WEBAPP_URL } from './config';
+const { Telegraf } = require('telegraf');
+const { BOT_TOKEN, WEBAPP_URL } = require('./config');
 
 if (!BOT_TOKEN) {
   throw new Error('BOT_TOKEN must be provided!');
@@ -25,10 +25,10 @@ bot.command('webapp', (ctx: any) => {
   const chatId = ctx.chat.id;
   // Encode le chatId en base64
   const encodedGroupId = Buffer.from(chatId.toString()).toString('base64');
-
+  
   console.log('Chat ID:', chatId);
   console.log('Encoded Group ID:', encodedGroupId);
-
+  
   ctx.reply('Open Web App', {
     reply_markup: {
       inline_keyboard: [[
